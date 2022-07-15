@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+  </head>
+  <body>
+    <h1> Chat With A Friend </h1>
+    <form action = "chatroom.html" method = "post" target = "_self">
+      <fieldset>
+        <div id = chatlist>
+            <script>
+                var request1 = new XMLHttpRequest();
+                request1.open("GET", "chatlist", true);
+                request1.send();
+                request1.onload = function() { 
+                    document.getElementById("chatlist").innerHTML = request1.responseText;
+                }
+            </script>
+        </div>
+        <br>
+        <input type = "submit" value = "send">
+      </fieldset>
+    </form>
+  </body>
+</html>

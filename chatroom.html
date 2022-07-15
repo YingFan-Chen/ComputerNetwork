@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chatroom</title>
+  </head>
+  <body>
+    <h1> Chatroom </h1>
+    <fieldset>
+    <div id = chathistory>
+      <script>
+        var request1 = new XMLHttpRequest();
+        request1.open("GET", "chathistory", true);
+        request1.send();
+        request1.onload = function() { 
+            document.getElementById("chathistory").innerHTML = request1.responseText;
+        }
+      </script> 
+    </div>
+    <br>
+    <br>
+    <form action = "home.html" method = "post" target = "_self">
+        <div id = chatmessage>
+          <input type="text" name="chatmessage">
+        </div>
+        <br>
+        <br>
+        <input type = "submit" value = "send">
+    </form>
+  </fieldset>
+  </body>
+</html>

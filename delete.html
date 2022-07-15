@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Delete</title>
+  </head>
+  <body>
+    <h1> Delete A Friend </h1>
+    <form action = "home.html" method = "post" target = "_self">
+      <fieldset>
+        <div id = deletelist>
+            <script>
+                var request1 = new XMLHttpRequest();
+                request1.open("GET", "deletelist", true);
+                request1.send();
+                request1.onload = function() { 
+                    document.getElementById("deletelist").innerHTML = request1.responseText;
+                }
+            </script>
+        </div>
+      </fieldset>
+    <br>
+    <input type = "submit" value = "send">
+    </form>
+  </body>
+</html>
